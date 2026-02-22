@@ -7,8 +7,15 @@ app = FastAPI(
 )
 
 @app.get("/health", tags=["Health"])
-
 def health_check():
+    return {
+        "status": "ok",
+        "timestamp": datetime.utcnow()
+    }
+
+
+@app.get("/anouar", tags=["Anouar"])
+def anouar_check():
     return {
         "status": "ok",
         "timestamp": datetime.utcnow()
